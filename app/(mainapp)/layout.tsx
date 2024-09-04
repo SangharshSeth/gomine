@@ -1,6 +1,6 @@
 "use client";
+import DynamicBreadcrumb from "@/components/DynamicBreadCrumbs";
 import LeftNav from "@/components/LeftNavigation";
-import Navbar from "@/components/NavigationBar";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -12,10 +12,12 @@ export default function MainAppLayout({
 }>) {
   return (
     <div className={`min-h-screen flex flex-col ${inter.className}`}>
-      <Navbar />
       <div className="flex flex-1">
         <LeftNav />
-        <main className="flex-1 pt-6 ml-64 bg-gray-100">{children}</main>
+        <main className="flex-1 sm:ml-64 lg:ml-72">
+          <DynamicBreadcrumb />
+          {children}
+        </main>
       </div>
     </div>
   );

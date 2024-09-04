@@ -9,7 +9,7 @@ export default function Navbar() {
   const { data: sessionData, status } = useSession();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b-slate-800 border-b-2">
       <div className="container mx-auto px-4 flex h-14 items-center justify-between">
         <div className="flex items-center">
           <a href="/" className="text-xl font-bold">Sangharsh</a>
