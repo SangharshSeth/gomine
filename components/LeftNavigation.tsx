@@ -59,13 +59,19 @@ export default function LeftNav() {
         </nav>
       </div>
       <div className="p-4 flex gap-1 border-t border-slate-700 bg-gray-800 sticky bottom-0">
-        <Image
-          src={user?.image || ""}
-          alt="User Avatar"
-          width={40}
-          className="rounded-full cursor-pointer"
-          height={40}
-        />
+      {user?.image ? (
+          <Image
+            src={user.image}
+            alt="User Avatar"
+            width={40}
+            height={40}
+            className="rounded-full cursor-pointer"
+          />
+        ) : (
+          <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center text-white">
+            {user?.name?.[0] || 'U'}
+          </div>
+        )}
         <DropdownMenu>
           <DropdownMenuTrigger className="text-gray-300 hover:text-white">
             {user?.name || "Account"}
