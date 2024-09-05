@@ -176,6 +176,56 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="py-16 bg-gray-900">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8 text-white">Pricing</h2>
+          <div className="flex justify-center gap-4">
+            {/* Basic Plan */}
+            <div className="p-6 bg-gray-900 rounded-lg shadow-md border border-gray-700 w-80 h-96">
+              <h3 className="text-xl font-bold text-white mb-4">Basic</h3>
+              <p className="text-4xl font-bold text-white mb-4">$9/month</p>
+              <ul className="text-gray-400 space-y-2 mb-6">
+                <li>Access to articles</li>
+                <li>Basic quizzes</li>
+                <li>Community support</li>
+              </ul>
+              <Button variant="outline" className="text-slate-950">
+                Choose Plan
+              </Button>
+            </div>
+
+            {/* Pro Plan (Highlighted with White Border) */}
+            <div className="p-8 bg-gray-900 rounded-lg shadow-md border-2 border-white transform scale-105 w-80 h-96">
+              <h3 className="text-xl font-bold text-white mb-4">Pro</h3>
+              <p className="text-4xl font-bold text-white mb-4">$19/month</p>
+              <ul className="text-gray-100 space-y-2 mb-6">
+                <li>Everything in Basic</li>
+                <li>Exclusive video lectures</li>
+                <li>Advanced code challenges</li>
+              </ul>
+              <Button variant="outline" className="text-white bg-slate-950">
+                Choose Plan
+              </Button>
+            </div>
+
+            {/* Enterprise Plan */}
+            <div className="p-6 bg-gray-900 rounded-lg shadow-md border border-gray-700 w-80 h-96">
+              <h3 className="text-xl font-bold text-white mb-4">Enterprise</h3>
+              <p className="text-4xl font-bold text-white mb-4">$49/month</p>
+              <ul className="text-gray-400 space-y-2 mb-6">
+                <li>Everything in Pro</li>
+                <li>Dedicated support</li>
+                <li>Custom training solutions</li>
+              </ul>
+              <Button variant="outline" className="text-slate-950">
+                Choose Plan
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Companies Section */}
       <section id="companies" className="py-16">
         <div className="container mx-auto text-center">
@@ -206,10 +256,8 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="text-white py-6 mt-auto ">
-        <div className="container mx-auto text-center">
-          <p>&copy; 2024 Learn Go. All rights reserved.</p>
-        </div>
+      <footer className="py-6 text-center bg-circular-gradient bg-opacity-100 shadow-sm shadow-slate-600">
+        <p className="text-gray-400">© 2024 Learn Go. All rights reserved.</p>
       </footer>
     </div>
   );
