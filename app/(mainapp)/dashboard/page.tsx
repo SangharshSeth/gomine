@@ -6,22 +6,22 @@ import Link from "next/link";
 import { FaUser, FaClipboardList, FaFileAlt } from "react-icons/fa"; // Import icons
 
 export default function Dashboard() {
-  const session = useSession();
-  console.log("Access token", session.data?.accessToken)
+  const {data: session, status} = useSession();
+  
 
-  if (session?.status === "unauthenticated") {
+  if (status === "unauthenticated") {
     redirect("/");
   }
 
   return (
     <div className="w-full bg-gray-900  text-white min-h-screen p-6">
-      {session?.status === "authenticated" && session && (
+      {status === "authenticated" && session && (
         <div className="space-y-6">
           <h1 className="text-3xl font-bold mb-4">
-            Welcome, {session?.data?.user?.name}!
+            Welcome, {session?.user?.name}!
           </h1>
           <p className="text-lg mb-4">
-            Your email: <strong>{session?.data?.user?.email}</strong>
+            Your email: <strong>{session?.user?.email}</strong>
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
