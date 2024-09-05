@@ -37,17 +37,17 @@ import { useRouter } from "next/navigation";
 const problems = [
   {
     no: 1,
-    question: "Two Sum",
+    question: "HTTP Service with standard library",
     difficulty: "Easy",
     status: "Completed",
-    tags: ["Arrays", "Hash Table"],
+    tags: ["HTTP", "Web"],
   },
   {
     no: 2,
-    question: "Add Two Numbers",
+    question: "Implement a Stack using a Slice and Structs",
     difficulty: "Medium",
     status: "Unattended",
-    tags: ["Linked List", "Math"],
+    tags: ["Stack", "Math"],
   },
   {
     no: 3,
@@ -172,11 +172,11 @@ export default function ProblemsTable() {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case "Easy":
-        return "px-6 py-1 bg-green-500 border-r-2 hover:bg-green-600";
+        return "px-6 py-1 bg-green-100 text-green-500  hover:bg-green-100 hover:text-green-500";
       case "Medium":
-        return "px-4 py-1 bg-yellow-500  hover:bg-yellow-600";
+        return "px-4 py-1 bg-yellow-100 text-yellow-500  hover:bg-yellow-100 hover:text-yellow-500";
       case "Hard":
-        return "px-6 py-1 bg-red-500 hover:bg-red-600";
+        return "px-6 py-1 bg-red-100 text-red-500 hover:bg-red-100 hover:text-red-500";
       default:
         return "px-4 py-1 bg-gray-500 hover:bg-gray-600";
     }

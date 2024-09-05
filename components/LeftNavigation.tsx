@@ -17,9 +17,7 @@ import { useEffect } from "react";
 
 export default function LeftNav() {
   const router = useRouter();
-  const session = useSession();
-  const user = session?.data?.user;
-  const status = session?.status;
+  const { data: session, status, } = useSession()
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -59,9 +57,9 @@ export default function LeftNav() {
         </nav>
       </div>
       <div className="p-4 flex gap-1 border-t border-slate-700 bg-gray-800 sticky bottom-0">
-      {user?.image ? (
+      {session?.user?.image? (
           <Image
-            src={user.image}
+            src={session?.user?.image}
             alt="User Avatar"
             width={40}
             height={40}
@@ -69,12 +67,12 @@ export default function LeftNav() {
           />
         ) : (
           <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center text-white">
-            {user?.name?.[0] || 'U'}
+            {session?.user?.name?.[0] || 'U'}
           </div>
         )}
         <DropdownMenu>
           <DropdownMenuTrigger className="text-gray-300 hover:text-white">
-            {user?.name || "Account"}
+            {session?.user?.name || "Account"}
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-gray-800 text-gray-300">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>

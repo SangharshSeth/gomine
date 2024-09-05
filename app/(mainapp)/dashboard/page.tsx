@@ -7,6 +7,7 @@ import { FaUser, FaClipboardList, FaFileAlt } from "react-icons/fa"; // Import i
 
 export default function Dashboard() {
   const session = useSession();
+  console.log("Access token", session.data?.accessToken)
 
   if (session?.status === "unauthenticated") {
     redirect("/");
