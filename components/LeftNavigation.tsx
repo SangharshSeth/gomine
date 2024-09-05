@@ -13,14 +13,19 @@ import {
 } from "./ui/dropdown-menu";
 import Image from "next/image";
 import { FaQuestion } from "react-icons/fa";
+import { useEffect } from "react";
 
 export default function LeftNav() {
   const router = useRouter();
   const session = useSession();
   const user = session?.data?.user;
-  if(session.status === "unauthenticated") {
-    router.push("/");
-  }
+  const status = session?.status;
+
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      router.push("/");
+    }
+  }, [status, router]);
 
   const handleNavigation = (path: string) => {
     router.push(path);
@@ -55,8 +60,8 @@ export default function LeftNav() {
       </div>
       <div className="p-4 flex gap-1 border-t border-slate-700 bg-gray-800 sticky bottom-0">
         <Image
-          src={user?.image || "/default-avatar.png"}
-          alt={user?.name || "User Avatar"}
+          src={user?.image || ""}
+          alt="User Avatar"
           width={40}
           className="rounded-full cursor-pointer"
           height={40}

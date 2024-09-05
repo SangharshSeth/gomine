@@ -25,9 +25,13 @@ import anime from "animejs/lib/anime.es.js";
 export default function LandingPage() {
   const session = useSession();
   const router = useRouter();
-  if (session && session.status === "authenticated") {
-    router.push("/dashboard");
-  }
+
+  useEffect(() => {
+    if (session && session.status === "authenticated") {
+      router.push("/dashboard");
+    }
+  }, [session, router]);
+
   return (
     <div className="min-h-screen flex flex-col bg-circular-gradient text-white">
       {/* Navbar */}
@@ -79,6 +83,7 @@ export default function LandingPage() {
               width={400}
               height={400}
               className="max-w-full h-auto"
+              priority={true}
             />
           </div>
         </div>
